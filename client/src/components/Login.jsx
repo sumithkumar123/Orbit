@@ -26,10 +26,12 @@ const Login = () => {
         password: formData.password,
       };
 
-      const res = await http.post("/users/login", payload);
-
-      const { token, role } = res.data;
-      if (!token) throw new Error("No token received from server.");
+      // OFFLINE MODE: Hardcoded mock login bypass
+      let role = "user";
+      if (payload.email === "admin@offline.com") {
+        role = "admin";
+      }
+      const token = "mock_offline_jwt_token_12345";
 
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
