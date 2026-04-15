@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Offline Orbit</string>
+    <string name="title_activity_main">Offline Orbit</string>
+    <string name="package_name">com.offlineorbit.app</string>
+    <string name="custom_url_scheme">com.offlineorbit.app</string>
+</resources>

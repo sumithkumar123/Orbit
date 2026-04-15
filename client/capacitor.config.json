@@ -1,0 +1,6 @@
+{
+  "appId": "com.offlineorbit.app",
+  "appName": "Offline Orbit",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
