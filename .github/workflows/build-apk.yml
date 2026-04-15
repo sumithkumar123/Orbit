@@ -38,7 +38,9 @@ jobs:
 
       - name: Sync Capacitor
         working-directory: ./client
-        run: npx cap sync android
+        run: |
+          chmod +x android/gradlew
+          npx cap sync android
 
       - name: Build APK
         working-directory: ./client/android
