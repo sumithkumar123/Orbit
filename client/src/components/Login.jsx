@@ -27,10 +27,17 @@ const Login = () => {
       };
 
       // OFFLINE MODE: Hardcoded mock login bypass
-      let role = "user";
-      if (payload.email === "admin@offline.com") {
+      const validUsers = ["user1@gmail.com", "user2@gmail.com", "user3@gmail.com"];
+      let role = "";
+      
+      if (payload.email === "admin@gmail.com") {
         role = "admin";
+      } else if (validUsers.includes(payload.email)) {
+        role = "user";
+      } else {
+        throw new Error("Invalid offline credentials. Try user1@gmail.com to user3@gmail.com, or admin@gmail.com");
       }
+      
       const token = "mock_offline_jwt_token_12345";
 
       localStorage.setItem("token", token);
